@@ -92,7 +92,7 @@ const StyledNavigationMenu = styled.nav`
   right: 0;
   width: 100%;
   height: fit-content;
-  background-color: var(--coral);
+  background-color: var(--darkred);
   transition-duration: 0.6s;
   animation-duration: 0.6s;
   animation-name: slideDown;

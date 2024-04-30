@@ -65,7 +65,7 @@ export default function SearchField({
       <StyledInputSearch>
         <StyledSearchItem>
           <StyledButtonSearch type="button" onClick={openSort}>
-            <Image
+            <StyledImage
               src={
                 isOpenSort
                   ? "/icons/icon-sort-active.png"
@@ -80,7 +80,7 @@ export default function SearchField({
 
         <StyledSearchItem>
           <StyledButtonSearch type="button" onClick={openFilter}>
-            <Image
+            <StyledImage
               src={
                 isOpenFilter
                   ? "/icons/icon-filter-active.png"
@@ -212,11 +212,15 @@ const StyledForm = styled.form`
   padding-left: 1em;
 `;
 
-const StyledFilterContainer = styled.div`
-  /* display: flex; */
-  justify-content: flex-start;
-  /* margin: 0px 0px 0px 25px; */
+const StyledImage = styled(Image)` 
+border-radius: 10px;
 `;
+
+ const StyledFilterContainer = styled.div`
+ /* display: flex; 
+  justify-content: flex-start;
+  margin: 0px 0px 0px 25px; */
+   `; 
 
 const StyledDropdown = styled.select`
   height: 2em;

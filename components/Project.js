@@ -17,16 +17,16 @@ export default function Project({
   return (
     <StyledContainer>
       <StyledArticle>
-        <StyledLink href={`/projects/${slug}`}>
+      <StyledLink href={`/projects/${slug}`}>
           <StyledHeadlineH2>{title}</StyledHeadlineH2>
-        </StyledLink>
+          </StyledLink>
         <FavoriteButton
           id={id}
           onToggleFavorite={onToggleFavorite}
           isFavorite={isFavorite}
         />
       </StyledArticle>
-
+      <StyledLink href={`/projects/${slug}`}>
       <Image
         src={image}
         width={250}
@@ -43,6 +43,8 @@ export default function Project({
           Complexity: <strong>{complexity}</strong>
         </StyledArticleTag>
       </StyledArticleTags>
+      </StyledLink>
+
     </StyledContainer>
   );
 }

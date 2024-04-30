@@ -8,11 +8,12 @@ export default createGlobalStyle`
 :root{
     --font-size: 18px;
     --text-color: #282828; //darkgrey
-    --lightbeige: #fdf0d5; 
-    --darkred: #780000;
-    --coral: #F3747C;
-    --darkblue: #003049;
-    --lightblue: #86B0CB;
+    --lightbeige: #F7EDE2; 
+    --darkred: #D05C5A;
+    --coral: #F5CAC3;
+    --darkblue: #3D6D8E;
+    --lightblue: #B8E8DC
+    ;
   }
 
   *,

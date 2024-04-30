@@ -6,7 +6,6 @@ export const StyledInputSearch = styled.label`
   align-items: flex-start;
   width: 88%;
   margin: 0px 0px 20px 30px;
-  /* border: black; */
 `;
 
 export const StyledInputSearchField = styled.input`
@@ -51,8 +50,8 @@ export const StyledInputModal = styled.input`
   outline-width: 0;
 
   &::file-selector-button {
-    background-color: var(--button-background);
-    color: var(--button-text);
+    background-color: var(--coral);
+    color: var(--text-color);
     font-size: 16px;
     font-weight: 500;
     width: 100px;
@@ -78,44 +77,44 @@ export const StyledFormContainerButtons = styled.div`
   justify-content: space-between;
 `;
 
-// export const StyledRadioButton = styled.input`
-//   --s: 1.3em;
-//   --c: var(--coral);
-//   height: var(--s);
-//   aspect-ratio: 1;
-//   border: calc(var(--s) / 8) solid var(--coral);
-//   padding: calc(var(--s) / 8);
-//   background: radial-gradient(farthest-side, var(--c) 94%, #0000) 50%/0 0
-//     no-repeat content-box;
-//   border-radius: 50%;
-//   outline-offset: calc(var(--s) / 10);
-//   -webkit-appearance: none;
-//   -moz-appearance: none;
-//   appearance: none;
-//   cursor: pointer;
-//   font-size: inherit;
-//   transition: 0.3s;
+export const StyledRadioButton = styled.input`
+  --s: 1.3em;
+  --c: var(--coral);
+  height: var(--s);
+  aspect-ratio: 1;
+  border: calc(var(--s) / 8) solid var(--coral);
+  padding: calc(var(--s) / 8);
+  background: radial-gradient(farthest-side, var(--c) 94%, #0000) 50%/0 0
+    no-repeat content-box;
+  border-radius: 50%;
+  outline-offset: calc(var(--s) / 10);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  font-size: inherit;
+  transition: 0.3s;
 
-//   &:checked {
-//     border-color: var(--c);
-//     background-size: 100%100%;
-//   }
-// `;
+  &:checked {
+    border-color: var(--c);
+    background-size: 100%100%;
+  }
+`;
 
-// export const StyledRadioButtonLabel = styled.label`
-//   display: flex;
-//   align-items: center;
-//   gap: 5px;
-//   margin: 0px 0px 0px 10px;
-//   padding: 0px 0px 4px 0px;
-// `;
+export const StyledRadioButtonLabel = styled.label`
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin: 0px 0px 0px 10px;
+  padding: 0px 0px 4px 0px;
+`;
 
 export const StyledCheckbox = styled.input`
   --s: 1.3em;
-  --c: var(--radio-button-background);
+  --c: var(--coral);
   height: var(--s);
   aspect-ratio: 1;
-  border: calc(var(--s) / 8) solid var(--radio-button-border);
+  border: calc(var(--s) / 8) solid var(--coral);
   padding: calc(var(--s) / 8);
   background: radial-gradient(farthest-side, var(--c) 94%, #0000) 50%/0 0
     no-repeat content-box;
