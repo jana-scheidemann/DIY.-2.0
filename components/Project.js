@@ -1,8 +1,9 @@
 import FavoriteButton from "./FavoriteButton";
 import Image from "next/image";
-import { StyledLink } from "./StyledComponents/StyledLink";
+// import { StyledLink } from "./StyledComponents/StyledLink";
 import { StyledHeadlineH2 } from "./StyledComponents/StyledHeadline";
 import styled from "styled-components";
+import Link from "next/link";
 
 export default function Project({
   title,
@@ -17,9 +18,9 @@ export default function Project({
   return (
     <StyledContainer>
       <StyledArticle>
-      <StyledLink href={`/projects/${slug}`}>
+        <StyledLink href={`/projects/${slug}`}>
           <StyledHeadlineH2>{title}</StyledHeadlineH2>
-          </StyledLink>
+        </StyledLink>
         <FavoriteButton
           id={id}
           onToggleFavorite={onToggleFavorite}
@@ -79,6 +80,12 @@ const StyledArticle = styled.article`
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+`;
+
+const StyledLink = styled(Link)`
+  color: var(--link-text);
+  text-decoration: none;
+  z-index: 2
 `;
 
 const StyledArticleTags = styled.div`

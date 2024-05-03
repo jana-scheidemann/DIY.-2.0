@@ -4,6 +4,7 @@ import Image from "next/image";
 import { StyledHeadlineH1 } from "./StyledComponents/StyledHeadline";
 import { useState } from "react";
 import ModalAdd from "./ModalAdd";
+import { StyledCancelButton } from "./StyledComponents/StyledButton";
 
 export default function Layout({ children, onResetFilters, onAddProject }) {
   const [isNavigationOpen, setIsNavigationOpen] = useState(false);
@@ -115,20 +116,3 @@ const StyledNavigationLink = styled(Link)`
   font-weight: 500;
   margin: 0.5em 1em;
 `;
-
-const StyledCancelButton = styled.button`
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  cursor: pointer;
-  border: none;
-  background-color: transparent;
-`;
-
-// const Body = styled.div`
-//   display: flex;
-//   flex-direction: column;
-//   color: var(--text-color);
-//   width: 100%;
-//   height: 100%;
-// `;

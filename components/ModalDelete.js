@@ -1,9 +1,9 @@
 import { StyledButton } from "./StyledComponents/StyledButton";
-import StyledErrorModal from "./StyledComponents/StyledErrorModal";
+import StyledModalMessage from "./StyledComponents/StyledModalMessage";
 
 export default function ModalDelete({ onConfirm, onCancel }) {
   return (
-    <StyledErrorModal>
+    <StyledModalMessage>
       <p>Are you sure you want to delete this project?</p>
       <StyledButton type="button" onClick={onConfirm}>
         Yes
@@ -11,6 +11,6 @@ export default function ModalDelete({ onConfirm, onCancel }) {
       <StyledButton type="button" onClick={onCancel}>
         No
       </StyledButton>
-    </StyledErrorModal>
+    </StyledModalMessage>
   );
 }

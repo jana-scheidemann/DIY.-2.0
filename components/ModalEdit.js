@@ -160,7 +160,7 @@ export default function ModalEdit({ currentProject, onSave, onCancel }) {
             <StyledButton onClick={handleStepEditCancel}>Close</StyledButton>
           </div>
         ) : (
-          <StyledButton onClick={handleStepEdit}>Update</StyledButton>
+          <StyledButton onClick={handleStepEdit}>Edit steps</StyledButton>
         )}
         {updateProject.steps.map((step, stepIndex) => (
           <div key={step.id}>

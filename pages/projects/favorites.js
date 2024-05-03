@@ -1,11 +1,11 @@
 import Project from "@/components/Project";
 import SearchField from "@/components/SearchField";
 // import { StyledSection } from "@/components/StyledComponents/StyledSection";
-import StyledErrorModal from "@/components/StyledComponents/StyledErrorModal";
+import StyledModalMessage from "@/components/StyledComponents/StyledModalMessage";
 import styled from "styled-components";
 import Link from "next/link";
 import { StyledHeadlineH2 } from "@/components/StyledComponents/StyledHeadline";
-import { StyledButtonLink } from "@/components/StyledComponents/StyledButton";
+import { StyledButton } from "@/components/StyledComponents/StyledButton";
 
 export default function FavoritesPage({
   searchResults,
@@ -54,18 +54,15 @@ export default function FavoritesPage({
       </StyledSection>
 
       {favoriteProjects.length === 0 && (
-        <StyledErrorModal>
+        <StyledModalMessage>
           <p>
             No results found. <br /> Please adjust your filter settings.
           </p>
-          <StyledButtonLink
-            href={"/projects/favorites"}
-            onClick={onResetFilters}
-          >
-            Back to favorites
-          </StyledButtonLink>
-          <StyledButtonLink href={"/"}>Home</StyledButtonLink>
-        </StyledErrorModal>
+          <StyledButton onClick={onResetFilters}>
+            <Link href={"/projects/favorites"}>Show all favorites</Link>
+          </StyledButton>
+          <StyledButton><Link  href={"/"}>Home</Link></StyledButton>
+        </StyledModalMessage>
       )}
     </>
   );

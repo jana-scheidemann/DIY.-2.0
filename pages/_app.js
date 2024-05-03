@@ -4,12 +4,13 @@ import { initialProjects } from "@/db/data";
 import GlobalStyle from "../styles";
 import Layout from "@/components/Layout";
 // import Link from "next/link";
-import StyledErrorModal from "@/components/StyledComponents/StyledErrorModal";
+import StyledModalMessage from "@/components/StyledComponents/StyledModalMessage";
 // import styled from "styled-components";
 import Fuse from "fuse.js";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { StyledButtonLink } from "@/components/StyledComponents/StyledButton";
+import { StyledButton } from "@/components/StyledComponents/StyledButton";
+import Link from "next/link";
 
 export default function App({ Component, pageProps }) {
   const [projects, setProjects] = useState(initialProjects);
@@ -182,14 +183,14 @@ export default function App({ Component, pageProps }) {
         />
 
         {searchResults.length === 0 && (
-          <StyledErrorModal>
+          <StyledModalMessage>
             <p>
-              No results found. <br /> Please adjust your filter settings.
+              No results found. <br /> Please adjust your search settings.
             </p>
-            <StyledButtonLink href={"/"} onClick={resetProjectFilter}>
-              &nbsp; Back &nbsp;
-            </StyledButtonLink>
-          </StyledErrorModal>
+            <StyledButton onClick={resetProjectFilter}>
+              <Link href={"/"}>Back</Link>
+            </StyledButton>
+          </StyledModalMessage>
         )}
       </Layout>
     </>

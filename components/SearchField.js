@@ -7,13 +7,10 @@ import {
   StyledSearchItem,
   StyledInputSearchField,
   StyledInputSearchFieldContainer,
-  // StyledRadioButtonLabel,
-  // StyledRadioButton,
 } from "./StyledComponents/StyledInput";
 import {
   StyledButton,
   StyledButtonContainer,
-  StyledButtonSearch,
 } from "./StyledComponents/StyledButton";
 import {
   StyledHeadlineH4,
@@ -192,7 +189,7 @@ export default function SearchField({
           </StyledFilterContainer>
           <StyledButtonContainer>
             <StyledButton type="submit">Apply</StyledButton>
-            <StyledButton type="reset" value="Clear" />
+            <StyledButton type="reset" value="Clear">Clear</StyledButton>
             <StyledButton type="button" onClick={onResetFilters}>
               Reset
             </StyledButton>
@@ -221,6 +218,11 @@ border-radius: 10px;
   justify-content: flex-start;
   margin: 0px 0px 0px 25px; */
    `; 
+ 
+const StyledButtonSearch = styled.button`
+   background-color: transparent;
+   border: none;
+ `;
 
 const StyledDropdown = styled.select`
   height: 2em;

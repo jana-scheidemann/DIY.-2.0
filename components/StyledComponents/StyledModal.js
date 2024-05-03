@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Image from "next/image";
+import { StyledCancelButton } from "./StyledButton";
 
 export default function StyledModal({ children, onCancel }) {
   return (
@@ -18,14 +19,6 @@ export default function StyledModal({ children, onCancel }) {
     </StyledPageBackground>
   );
 }
-const StyledCancelButton = styled.button`
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  cursor: pointer;
-  border: none;
-  background-color: transparent;
-`;
 
 const StyledPageBackground = styled.div`
   position: fixed;

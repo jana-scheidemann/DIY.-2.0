@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export default function StyledErrorModal({ children }) {
+export default function StyledModalMessage({ children }) {
   return (
     <StyledPageBackground>
       <StyledModalContainer>{children}</StyledModalContainer>
