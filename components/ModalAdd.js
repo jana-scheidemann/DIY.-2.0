@@ -44,7 +44,6 @@ export default function ModalAdd({ onAddProject, onToggleAddModal }) {
       complexity: data.complexity,
       steps: stepsData,
       slug: slug,
-
       image: url,
       favorite: false,
     };

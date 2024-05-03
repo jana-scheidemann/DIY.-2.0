@@ -27,7 +27,7 @@ const StyledPageBackground = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: var(--text-color);
+  background-color: rgba(0, 0, 0, 0.5);
 `;
 
 const StyledModalContainer = styled.div`
