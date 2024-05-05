@@ -34,7 +34,9 @@ export default function FavoritesPage({
       <StyledHeadlineH2>Favorite Projects</StyledHeadlineH2>
 
       {favoriteProjects.length === 0 && (
-        <p hidden={false}>No projects selected as favorites yet.</p>
+        <p>
+          No projects are selected as favorite OR adjust your search settings.
+        </p>
       )}
 
       <StyledSection>

@@ -211,9 +211,7 @@ export default function SearchField({
       )}
 
       {searchResults.length === 0 && (
-        <p hidden={false}>
-          No results found. Please adjust your search settings.
-        </p>
+        <p>No results found. Please adjust your search settings.</p>
       )}
     </>
   );
