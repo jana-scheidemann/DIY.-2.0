@@ -126,8 +126,8 @@ export default function ProjectDetails({
 
 const StyledArticle = styled.article`
   width: 100%;
-  background-color: var(--darkblue);
-  color: var(--lightbeige);
+  background-color: var(--lightblue);
+  color: var(--text-color);
   display: flex;
   justify-content: space-between;
   align-items: flex-start;

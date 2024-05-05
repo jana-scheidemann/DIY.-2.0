@@ -3,14 +3,9 @@ import { useState } from "react";
 import { initialProjects } from "@/db/data";
 import GlobalStyle from "../styles";
 import Layout from "@/components/Layout";
-// import Link from "next/link";
-import StyledModalMessage from "@/components/StyledComponents/StyledModalMessage";
-// import styled from "styled-components";
 import Fuse from "fuse.js";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { StyledButton } from "@/components/StyledComponents/StyledButton";
-import Link from "next/link";
 
 export default function App({ Component, pageProps }) {
   const [projects, setProjects] = useState(initialProjects);
@@ -181,17 +176,6 @@ export default function App({ Component, pageProps }) {
           onSortComplexityStartLow={handleSortComplexityStartLow}
           onSortDuration={handleSortDuration}
         />
-
-        {searchResults.length === 0 && (
-          <StyledModalMessage>
-            <p>
-              No results found. <br /> Please adjust your search settings.
-            </p>
-            <StyledButton onClick={resetProjectFilter}>
-              <Link href={"/"}>Back</Link>
-            </StyledButton>
-          </StyledModalMessage>
-        )}
       </Layout>
     </>
   );

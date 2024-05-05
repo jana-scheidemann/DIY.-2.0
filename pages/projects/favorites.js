@@ -1,11 +1,7 @@
 import Project from "@/components/Project";
 import SearchField from "@/components/SearchField";
-// import { StyledSection } from "@/components/StyledComponents/StyledSection";
-import StyledModalMessage from "@/components/StyledComponents/StyledModalMessage";
 import styled from "styled-components";
-import Link from "next/link";
 import { StyledHeadlineH2 } from "@/components/StyledComponents/StyledHeadline";
-import { StyledButton } from "@/components/StyledComponents/StyledButton";
 
 export default function FavoritesPage({
   searchResults,
@@ -32,9 +28,14 @@ export default function FavoritesPage({
         onSortDuration={onSortDuration}
         onFilterProjects={onFilterProjects}
         onResetFilters={onResetFilters}
+        searchResults={searchResults}
       />
 
       <StyledHeadlineH2>Favorite Projects</StyledHeadlineH2>
+
+      {favoriteProjects.length === 0 && (
+        <p hidden={false}>No projects selected as favorites yet.</p>
+      )}
 
       <StyledSection>
         {favoriteProjects.map((project) => (
@@ -52,18 +53,6 @@ export default function FavoritesPage({
           />
         ))}
       </StyledSection>
-
-      {favoriteProjects.length === 0 && (
-        <StyledModalMessage>
-          <p>
-            No results found. <br /> Please adjust your filter settings.
-          </p>
-          <StyledButton onClick={onResetFilters}>
-            <Link href={"/projects/favorites"}>Show all favorites</Link>
-          </StyledButton>
-          <StyledButton><Link  href={"/"}>Home</Link></StyledButton>
-        </StyledModalMessage>
-      )}
     </>
   );
 }

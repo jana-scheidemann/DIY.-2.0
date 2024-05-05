@@ -28,24 +28,24 @@ export default function Project({
         />
       </StyledArticle>
       <StyledLink href={`/projects/${slug}`}>
-      <Image
-        src={image}
-        width={250}
-        height={250}
-        layout="responsive"
-        alt={`Image of ${title}`}
-      />
+        <Image
+          src={image}
+          width={250}
+          height={250}
+          layout="responsive"
+          alt={`Image of ${title}`}
+        />
 
-      <StyledArticleTags>
-        <StyledArticleTag>
-          Duration: <strong>{duration}</strong>
-        </StyledArticleTag>
-        <StyledArticleTag>
-          Complexity: <strong>{complexity}</strong>
-        </StyledArticleTag>
-      </StyledArticleTags>
+        <StyledArticleTags>
+          <StyledArticleTag>
+            Duration:
+            <br /> <strong>{duration}</strong>
+          </StyledArticleTag>
+          <StyledArticleTag>
+            Complexity: <br /> <strong>{complexity}</strong>
+          </StyledArticleTag>
+        </StyledArticleTags>
       </StyledLink>
-
     </StyledContainer>
   );
 }
@@ -57,45 +57,41 @@ const StyledContainer = styled.div`
   @media screen and (min-width: 600px) {
     width: 45%;
     height: auto;
-    padding: 1%;
   }
 
   @media screen and (min-width: 900px) {
-    width: 32%;
+    width: 30%;
     height: auto;
-    padding: 1%;
   }
 
   @media screen and (min-width: 1200px) {
-    width: 25%;
+    width: 23%;
     height: auto;
-    padding: 1%;
   }
 `;
 
 const StyledArticle = styled.article`
   width: 100%;
-  background-color: var(--darkblue);
-  color: var(--lightbeige);
+  height: 120px;
+  background-color: var(--lightblue);
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
 `;
 
 const StyledLink = styled(Link)`
-  color: var(--link-text);
-  text-decoration: none;
-  z-index: 2
+  color: var(--text-color);
 `;
 
 const StyledArticleTags = styled.div`
   display: flex;
   justify-content: space-between;
-  margin: 10px 10px 30px 10px;
+  margin: 10px 10px 30px 0px;
 `;
 
 const StyledArticleTag = styled.p`
   font-size: 1.1em;
   font-weight: 400;
   margin: 0;
+  padding: 5px;
 `;

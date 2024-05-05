@@ -2,10 +2,8 @@ import styled from "styled-components";
 
 export const StyledInputSearch = styled.label`
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  width: 88%;
-  margin: 0px 0px 20px 30px;
+  width: 90%;
+  margin: 0px 0px 20px 20px;
 `;
 
 export const StyledInputSearchField = styled.input`
@@ -78,26 +76,11 @@ export const StyledFormContainerButtons = styled.div`
 `;
 
 export const StyledRadioButton = styled.input`
-  --s: 1.3em;
-  --c: var(--coral);
-  height: var(--s);
-  aspect-ratio: 1;
-  border: calc(var(--s) / 8) solid var(--coral);
-  padding: calc(var(--s) / 8);
-  background: radial-gradient(farthest-side, var(--c) 94%, #0000) 50%/0 0
-    no-repeat content-box;
-  border-radius: 50%;
-  outline-offset: calc(var(--s) / 10);
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  cursor: pointer;
-  font-size: inherit;
-  transition: 0.3s;
-
+  color: var(--coral);
+  background-color: var(--coral);
   &:checked {
-    border-color: var(--c);
-    background-size: 100%100%;
+    color: var(--coral);
+    outline: 1px solid var(--coral);
   }
 `;
 

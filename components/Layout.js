@@ -75,20 +75,21 @@ export default function Layout({ children, onResetFilters, onAddProject }) {
   );
 }
 const StyledNavigation = styled.nav`
-  position: static;
+  position: sticky;
   top: 0;
+  background-color: var(--lightbeige);
   height: 5em;
   width: 100vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1em;
-  z-index: 4;
+  z-index: 2;
 `;
 
 const StyledNavigationMenu = styled.nav`
   position: fixed;
-  z-index: 5;
+  z-index: 3;
   top: 0;
   right: 0;
   width: 100%;
@@ -110,7 +111,6 @@ const StyledNavigationMenu = styled.nav`
 `;
 
 const StyledNavigationLink = styled(Link)`
-  text-decoration: none;
   color: var(--lightbeige);
   font-size: 1.4em;
   font-weight: 500;

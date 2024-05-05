@@ -7,6 +7,7 @@ import {
   StyledSearchItem,
   StyledInputSearchField,
   StyledInputSearchFieldContainer,
+  StyledRadioButton,
 } from "./StyledComponents/StyledInput";
 import {
   StyledButton,
@@ -25,6 +26,7 @@ export default function SearchField({
   handleSearch,
   onFilterProjects,
   onResetFilters,
+  searchResults,
 }) {
   const [isOpenSort, setIsOpenSort] = useState(false);
   const [isOpenFilter, setIsOpenFilter] = useState(false);
@@ -135,66 +137,83 @@ export default function SearchField({
 
           <StyledFilterContainer>
             <StyledHeadlineH5>Duration:</StyledHeadlineH5>
-            <input
-              type="radio"
-              id="duration-short"
-              name="duration"
-              value="short"
-            />
-            <label htmlFor="duration-short">&lt; 2 hours</label>
+            <label htmlFor="duration-short">
+              <input
+                type="radio"
+                id="duration-short"
+                name="duration"
+                value="short"
+              />
+              &lt; 2 hours
+            </label>
 
-            <input
-              type="radio"
-              id="duration-medium"
-              name="duration"
-              value="medium"
-            />
-            <label htmlFor="duration-medium">2 - 23 hours</label>
+            <label htmlFor="duration-medium">
+              <input
+                type="radio"
+                id="duration-medium"
+                name="duration"
+                value="medium"
+              />
+              2 - 23 hours
+            </label>
 
-            <input
-              type="radio"
-              id="duration-long"
-              name="duration"
-              value="long"
-            />
-            <label htmlFor="duration-long">&gt; 23 hours</label>
+            <label htmlFor="duration-long">
+              <input
+                type="radio"
+                id="duration-long"
+                name="duration"
+                value="long"
+              />
+              &gt; 23 hours
+            </label>
           </StyledFilterContainer>
 
           <StyledFilterContainer>
             <StyledHeadlineH5>Complexity:</StyledHeadlineH5>
-
-            <input
-              type="radio"
-              id="beginner"
-              name="complexity"
-              value="Beginner"
-            />
-            <label htmlFor="beginner">Beginner</label>
-
-            <input
-              type="radio"
-              id="intermediate"
-              name="complexity"
-              value="Intermediate"
-            />
-            <label htmlFor="intermediate">Intermediate</label>
-
-            <input
-              type="radio"
-              id="advanced"
-              name="complexity"
-              value="Advanced"
-            />
-            <label htmlFor="advanced">Advanced</label>
+            <label htmlFor="beginner">
+              <input
+                type="radio"
+                id="beginner"
+                name="complexity"
+                value="Beginner"
+              />
+              Beginner
+            </label>
+            <label htmlFor="intermediate">
+              <input
+                type="radio"
+                id="intermediate"
+                name="complexity"
+                value="Intermediate"
+              />
+              Intermediate
+            </label>
+            <label htmlFor="advanced">
+              <input
+                type="radio"
+                id="advanced"
+                name="complexity"
+                value="Advanced"
+              />
+              Advanced
+            </label>
           </StyledFilterContainer>
           <StyledButtonContainer>
             <StyledButton type="submit">Apply</StyledButton>
-            <StyledButton type="reset" value="Clear">Clear</StyledButton>
+            <StyledButton type="reset" value="Clear">
+              Clear
+            </StyledButton>
             <StyledButton type="button" onClick={onResetFilters}>
               Reset
             </StyledButton>
           </StyledButtonContainer>
         </StyledForm>
+      )}
+
+      {searchResults.length === 0 && (
+        <p hidden={false}>
+          No results found. Please adjust your search settings.
+        </p>
       )}
     </>
   );
@@ -209,20 +228,21 @@ const StyledForm = styled.form`
   padding-left: 1em;
 `;
 
-const StyledImage = styled(Image)` 
-border-radius: 10px;
+const StyledImage = styled(Image)`
+  border-radius: 10px;
 `;
 
- const StyledFilterContainer = styled.div`
- /* display: flex; 
-  justify-content: flex-start;
-  margin: 0px 0px 0px 25px; */
-   `; 
- 
+const StyledFilterContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-left: 25px;
+  font-size: 16px;
+`;
+
 const StyledButtonSearch = styled.button`
-   background-color: transparent;
-   border: none;
- `;
+  background-color: transparent;
+  border: none;
+`;
 
 const StyledDropdown = styled.select`
   height: 2em;
@@ -234,7 +254,7 @@ const StyledDropdown = styled.select`
   margin: 0px 0px 20px 35px;
 
   &:focus {
-    outline-color: var(--background-color);
+    outline-color: var(--coral);
   }
 
   &:hover {

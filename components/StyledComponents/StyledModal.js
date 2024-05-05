@@ -22,7 +22,7 @@ export default function StyledModal({ children, onCancel }) {
 
 const StyledPageBackground = styled.div`
   position: fixed;
-  z-index: 6;
+  z-index: 4;
   top: 0;
   left: 0;
   width: 100%;
@@ -34,7 +34,7 @@ const StyledModalContainer = styled.div`
   overflow-y: auto;
   max-height: calc(100% -10%);
   position: fixed;
-  z-index: 6;
+  z-index: 4;
   top: calc(5%);
   right: calc(5%);
   bottom: calc(5%);

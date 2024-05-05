@@ -10,19 +10,19 @@ export default function StyledModalMessage({ children }) {
 
 const StyledPageBackground = styled.div`
   position: fixed;
-  z-index: 6;
+  z-index: 4;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: var(--text-color);
+  background-color: rgba(0, 0, 0, 0.5);
 `;
 
 const StyledModalContainer = styled.div`
   overflow-y: auto;
   height: fit-content;
   position: fixed;
-  z-index: 6;
+  z-index: 4;
   top: calc(30%);
   right: calc(5%);
   bottom: calc(5%);

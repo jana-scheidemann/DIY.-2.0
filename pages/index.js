@@ -1,7 +1,6 @@
 import Project from "@/components/Project";
 import styled from "styled-components";
 import SearchField from "@/components/SearchField";
-// import { StyledSection } from "@/components/StyledComponents/StyledSection";
 
 export default function HomePage({
   handleSearch,
@@ -24,6 +23,7 @@ export default function HomePage({
         onSortDuration={onSortDuration}
         onFilterProjects={onFilterProjects}
         onResetFilters={onResetFilters}
+        searchResults={searchResults}
       />
 
       <StyledSection>
@@ -49,10 +49,12 @@ export default function HomePage({
 const StyledSection = styled.section`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 20px;
 
   @media screen and (min-width: 600px) {
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 2%;
   }
 `;
