@@ -93,12 +93,14 @@ const StyledNavigationMenu = styled.nav`
   top: 0;
   right: 0;
   width: 100%;
+  width: fit-content;
   height: fit-content;
+  padding: 30px;
   background-color: var(--darkred);
   transition-duration: 0.6s;
   animation-duration: 0.6s;
-  animation-name: slideDown;
-  @keyframes slideDown {
+  animation-name: slidein;
+  @keyframes slidein {
     from {
       transform: translateY(-100%);
     }

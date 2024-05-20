@@ -6,8 +6,6 @@ import {
   StyledFormContainer,
   StyledRadioButton,
   StyledRadioButtonLabel,
-  StyledCheckbox,
-  StyledCheckboxLabel,
 } from "./StyledComponents/StyledInput";
 import { StyledButton } from "./StyledComponents/StyledButton";
 import {
@@ -15,11 +13,11 @@ import {
   StyledHeadlineH4,
   StyledHeadlineH5,
 } from "./StyledComponents/StyledHeadline";
+import Image from "next/image";
 
 export default function ModalEdit({ currentProject, onSave, onCancel }) {
   const [updateProject, setUpdateProject] = useState(currentProject);
   const [selectSteps, setSelectSteps] = useState({});
-  const [updateSteps, setUpdateSteps] = useState(false);
   const [updateMaterials, setUpdateMaterials] = useState(
     currentProject.materials.join(", ")
   );
@@ -65,16 +63,6 @@ export default function ModalEdit({ currentProject, onSave, onCancel }) {
       steps: prevState.steps.filter((step) => !selectSteps[step.id]),
     }));
     setSelectSteps({});
-  }
-
-  function handleStepEdit(event) {
-    event.preventDefault();
-    setUpdateSteps(true);
-  }
-
-  function handleStepEditCancel(event) {
-    event.preventDefault();
-    setUpdateSteps(false);
   }
 
   function handleStepSelect(id) {
@@ -153,25 +141,35 @@ export default function ModalEdit({ currentProject, onSave, onCancel }) {
           </div>
         ))}
         <StyledHeadlineH4>Steps</StyledHeadlineH4>
-        {updateSteps ? (
-          <div>
-            <StyledButton onClick={handleStepAdd}>Add</StyledButton>
-            <StyledButton onClick={handleStepDelete}>Delete</StyledButton>
-            <StyledButton onClick={handleStepEditCancel}>Close</StyledButton>
-          </div>
-        ) : (
-          <StyledButton onClick={handleStepEdit}>Edit steps</StyledButton>
-        )}
+
+        <div>
+          <StyledButton onClick={handleStepAdd}>
+            <Image
+              src="/icons/add.svg"
+              width={20}
+              height={20}
+              alt="add another step"
+            />
+          </StyledButton>
+          <StyledButton onClick={handleStepDelete}>
+            <Image
+              src="/icons/delete.svg"
+              width={20}
+              height={20}
+              alt="delete this step"
+            />
+          </StyledButton>
+        </div>
+
         {updateProject.steps.map((step, stepIndex) => (
           <div key={step.id}>
             <StyledHeadlineH5>Step {stepIndex + 1} &nbsp;</StyledHeadlineH5>
-            <StyledCheckboxLabel htmlFor={`step${stepIndex + 1}`}>
-              {updateSteps && (
-                <StyledCheckbox
-                  type="checkbox"
-                  onChange={() => handleStepSelect(step.id)}
-                />
-              )}
+            <label htmlFor={`step${stepIndex + 1}`}>
+              <input
+                type="checkbox"
+                onChange={() => handleStepSelect(step.id)}
+              />
+
               <StyledInputModal
                 type="text"
                 name={`step${stepIndex + 1}`}
@@ -189,13 +187,13 @@ export default function ModalEdit({ currentProject, onSave, onCancel }) {
                 }
                 size="40"
               />
-            </StyledCheckboxLabel>
+            </label>
           </div>
         ))}
-        <StyledHeadlineH4>Confirm Changes</StyledHeadlineH4>
-        <div>
-          <StyledButton type="submit">Save</StyledButton>
-        </div>
+
+        <StyledButton type="submit">
+          <strong>save all changes</strong>
+        </StyledButton>
       </StyledFormContainer>
     </StyledModal>
   );

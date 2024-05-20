@@ -14,6 +14,7 @@ import {
   StyledRadioButtonLabel,
 } from "./StyledComponents/StyledInput";
 import { StyledButton } from "./StyledComponents/StyledButton";
+import Image from "next/image";
 
 export default function ModalAdd({ onAddProject, onToggleAddModal }) {
   const [steps, setSteps] = useState([1]);
@@ -163,9 +164,16 @@ export default function ModalAdd({ onAddProject, onToggleAddModal }) {
         ))}
         <StyledFormContainerButtons>
           <StyledButton type="button" onClick={addStep}>
-            Add
+            <Image
+              src="/icons/add.svg"
+              width={20}
+              height={20}
+              alt="add another step"
+            />
           </StyledButton>
-          <StyledButton type="submit">Submit</StyledButton>
+          <StyledButton type="submit">
+            <strong>save new project</strong>
+          </StyledButton>
         </StyledFormContainerButtons>
       </StyledFormContainer>
     </StyledModal>

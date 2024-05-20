@@ -103,8 +103,22 @@ export default function ProjectDetails({
         ))}
       </StyledOList>
       <StyledButtonContainer>
-        <StyledButton onClick={handleEdit}>Edit</StyledButton>
-        <StyledButton onClick={handleDelete}>Delete</StyledButton>
+        <StyledButton onClick={handleEdit}>
+          <Image
+            src="/icons/edit.svg"
+            width={20}
+            height={20}
+            alt="edit this project"
+          />
+        </StyledButton>
+        <StyledButton onClick={handleDelete}>
+          <Image
+            src="/icons/delete.svg"
+            width={20}
+            height={20}
+            alt="delete this project"
+          />
+        </StyledButton>
       </StyledButtonContainer>
 
       {modalEdit && (
